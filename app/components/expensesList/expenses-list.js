@@ -8,7 +8,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('angular2/core');
-var expense_service_1 = require('../expenseService/expense-service');
+var expense_service_1 = require('../../services/expense-service');
 var expense_1 = require('../expense/expense');
 var inline_edit_1 = require('../inlineEdit/inline-edit');
 var ExpensesListComponent = (function () {
@@ -27,7 +27,7 @@ var ExpensesListComponent = (function () {
             selector: 'expenses-list',
             templateUrl: './components/expensesList/expenses-list.html',
             directives: [expense_1.ExpenseCmp, inline_edit_1.InlineEditCmp]
-        }), 
+        }),
         __metadata('design:paramtypes', [])
     ], ExpensesListComponent);
     return ExpensesListComponent;

@@ -9,7 +9,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 var core_1 = require('angular2/core');
 var core_2 = require('angular2/core');
-var expense_service_1 = require('../expenseService/expense-service');
+var expense_service_1 = require('../../services/expense-service');
 var InlineEditCmp = (function () {
     function InlineEditCmp() {
         this.inEditMode = false;
@@ -27,11 +27,11 @@ var InlineEditCmp = (function () {
         this.show = !this.show;
     };
     __decorate([
-        core_2.Input(), 
+        core_2.Input(),
         __metadata('design:type', Object)
     ], InlineEditCmp.prototype, "expense", void 0);
     __decorate([
-        core_2.Input(), 
+        core_2.Input(),
         __metadata('design:type', String)
     ], InlineEditCmp.prototype, "prop", void 0);
     InlineEditCmp = __decorate([
@@ -43,7 +43,7 @@ var InlineEditCmp = (function () {
                 '(mouseover)': 'toggleShow()',
                 '(mouseout)': 'toggleShow()'
             }
-        }), 
+        }),
         __metadata('design:paramtypes', [])
     ], InlineEditCmp);
     return InlineEditCmp;

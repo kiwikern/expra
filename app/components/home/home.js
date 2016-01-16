@@ -10,7 +10,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var core_1 = require('angular2/core');
 var expenses_list_1 = require('../expensesList/expenses-list');
 var expense_form_1 = require('../expenseForm/expense-form');
-var expense_service_1 = require('../expenseService/expense-service');
+var expense_service_1 = require('../../services/expense-service');
 var HomeCmp = (function () {
     function HomeCmp() {
         this.expenseService = expense_service_1.ExpenseService.getInstance();
@@ -21,7 +21,7 @@ var HomeCmp = (function () {
             templateUrl: './components/home/home.html',
             styleUrls: ['./components/home/home.css'],
             directives: [expenses_list_1.ExpensesListComponent, expense_form_1.ExpenseFormComponent]
-        }), 
+        }),
         __metadata('design:paramtypes', [])
     ], HomeCmp);
     return HomeCmp;

@@ -1,27 +1,17 @@
-import {Injectable} from 'angular2/core';
-
-@Injectable()
 export class ExpenseService {
   static instance:ExpenseService;
   static LOCAL_STORAGE_KEY:string = 'expenses';
   expenses:Expense[];
   categories:string[];
 
-  constructor(expenses?:Expense[]) {
+  constructor() {
+    let expenses = JSON.parse(window.localStorage.getItem(ExpenseService.LOCAL_STORAGE_KEY));
     if (expenses === null || typeof expenses === 'undefined') {
       this.expenses = this.getDemoValues();
     } else {
       this.expenses = expenses;
     }
     this.categories = ['Food', 'Furniture', 'Cinema', 'Hairdresser', 'Transport', 'Furniture'];
-  }
-
-  static getInstance() {
-    if (ExpenseService.instance === null || ExpenseService.instance === undefined) {
-      let localStorageExpenses:Expense[] = JSON.parse(window.localStorage.getItem(ExpenseService.LOCAL_STORAGE_KEY));
-      ExpenseService.instance = new ExpenseService(localStorageExpenses);
-    }
-    return ExpenseService.instance;
   }
 
   getExpenses() {
@@ -50,21 +40,25 @@ export class ExpenseService {
   private getDemoValues() {
     return [
       {
+        id: 1,
         name: 'Kebap',
         amount: 3,
         category: 'Food'
       },
       {
+        id: 2,
         name: 'Couch',
         amount: 299,
         category: 'Furniture'
       },
       {
+        id: 3,
         name: 'Titanic 3D',
         amount: 2,
         category: 'Cinema'
       },
       {
+        id: 4,
         name: 'Bus Ticket',
         amount: 2,
         category: 'Transport'

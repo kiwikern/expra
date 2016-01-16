@@ -1,6 +1,6 @@
 import {Component} from 'angular2/core';
 import {Input} from 'angular2/core';
-import {ExpenseService} from '../expenseService/expense-service';
+import {ExpenseService} from '../../services/expense-service';
 @Component({
   selector: 'inline-edit',
   templateUrl: './components/inlineEdit/inline-edit.html',
@@ -18,10 +18,10 @@ export class InlineEditCmp {
   private expenseService:ExpenseService;
   private categories:string[];
 
-  constructor() {
+  constructor(expenseService:ExpenseService) {
     this.inEditMode = false;
     this.show = false;
-    this.expenseService = ExpenseService.getInstance();
+    this.expenseService = expenseService;
     this.categories = this.expenseService.getCategories();
   }
 

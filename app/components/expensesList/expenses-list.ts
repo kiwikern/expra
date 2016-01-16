@@ -1,5 +1,5 @@
 import {Component} from 'angular2/core';
-import {ExpenseService} from '../expenseService/expense-service';
+import {ExpenseService} from '../../services/expense-service';
 import {ExpenseCmp} from '../expense/expense';
 import {InlineEditCmp} from '../inlineEdit/inline-edit';
 
@@ -9,8 +9,8 @@ import {InlineEditCmp} from '../inlineEdit/inline-edit';
   directives: [ExpenseCmp, InlineEditCmp]
 })
 export class ExpensesListComponent {
-  constructor() {
-    this.expenseService = ExpenseService.getInstance();
+  constructor(expenseService:ExpenseService) {
+    this.expenseService = expenseService;
     this.expenses = this.expenseService.getExpenses();
   }
 

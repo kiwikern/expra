@@ -1,7 +1,7 @@
 import {Component} from 'angular2/core';
 import {ExpensesListComponent} from '../expensesList/expenses-list';
 import {ExpenseFormComponent} from '../expenseForm/expense-form';
-import {ExpenseService} from '../expenseService/expense-service';
+import {ExpenseService} from '../../services/expense-service';
 
 @Component({
   selector: 'home',
@@ -12,7 +12,7 @@ import {ExpenseService} from '../expenseService/expense-service';
 export class HomeCmp {
   expenseService:ExpenseService;
 
-  constructor() {
-    this.expenseService = ExpenseService.getInstance();
+  constructor(expenseService:ExpenseService) {
+    this.expenseService = expenseService;
   }
 }
