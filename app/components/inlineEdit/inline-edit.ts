@@ -36,4 +36,8 @@ export class InlineEditCmp {
     this.show = !this.show;
   }
 
+  delete(expense:Expense) {
+    this.expenseService.delete(expense);
+  }
+
 }

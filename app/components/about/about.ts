@@ -8,6 +8,7 @@ import {CORE_DIRECTIVES} from 'angular2/common';
 })
 export class AboutCmp {
   constructor() {
+    // empty
   }
  /*
  * @param newname  any text as input.

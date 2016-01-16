@@ -26,6 +26,7 @@ export class ExpenseFormComponent {
 
   private clearExpense() {
     this.expense = {
+      id: -1,
       name: '',
       category: '',
       amount: null

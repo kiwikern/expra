@@ -11,10 +11,10 @@ var core_1 = require('angular2/core');
 var core_2 = require('angular2/core');
 var expense_service_1 = require('../../services/expense-service');
 var InlineEditCmp = (function () {
-    function InlineEditCmp() {
+    function InlineEditCmp(expenseService) {
         this.inEditMode = false;
         this.show = false;
-        this.expenseService = expense_service_1.ExpenseService.getInstance();
+        this.expenseService = expenseService;
         this.categories = this.expenseService.getCategories();
     }
     InlineEditCmp.prototype.toggleEditMode = function () {
@@ -26,12 +26,15 @@ var InlineEditCmp = (function () {
     InlineEditCmp.prototype.toggleShow = function () {
         this.show = !this.show;
     };
+    InlineEditCmp.prototype.delete = function (expense) {
+        this.expenseService.delete(expense);
+    };
     __decorate([
-        core_2.Input(),
+        core_2.Input(), 
         __metadata('design:type', Object)
     ], InlineEditCmp.prototype, "expense", void 0);
     __decorate([
-        core_2.Input(),
+        core_2.Input(), 
         __metadata('design:type', String)
     ], InlineEditCmp.prototype, "prop", void 0);
     InlineEditCmp = __decorate([
@@ -43,8 +46,8 @@ var InlineEditCmp = (function () {
                 '(mouseover)': 'toggleShow()',
                 '(mouseout)': 'toggleShow()'
             }
-        }),
-        __metadata('design:paramtypes', [])
+        }), 
+        __metadata('design:paramtypes', [expense_service_1.ExpenseService])
     ], InlineEditCmp);
     return InlineEditCmp;
 })();

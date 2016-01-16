@@ -12,8 +12,8 @@ var expense_service_1 = require('../../services/expense-service');
 var expense_1 = require('../expense/expense');
 var inline_edit_1 = require('../inlineEdit/inline-edit');
 var ExpensesListComponent = (function () {
-    function ExpensesListComponent() {
-        this.expenseService = expense_service_1.ExpenseService.getInstance();
+    function ExpensesListComponent(expenseService) {
+        this.expenseService = expenseService;
         this.expenses = this.expenseService.getExpenses();
     }
     ExpensesListComponent.prototype.expensesSum = function () {
@@ -27,8 +27,8 @@ var ExpensesListComponent = (function () {
             selector: 'expenses-list',
             templateUrl: './components/expensesList/expenses-list.html',
             directives: [expense_1.ExpenseCmp, inline_edit_1.InlineEditCmp]
-        }),
-        __metadata('design:paramtypes', [])
+        }), 
+        __metadata('design:paramtypes', [expense_service_1.ExpenseService])
     ], ExpensesListComponent);
     return ExpensesListComponent;
 })();

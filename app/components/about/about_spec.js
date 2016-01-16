@@ -11,7 +11,6 @@ var testing_internal_1 = require('angular2/testing_internal');
 var core_1 = require('angular2/core');
 var dom_adapter_1 = require('angular2/src/platform/dom/dom_adapter');
 var about_1 = require('./about');
-var name_list_1 = require('../../services/name_list');
 function main() {
     testing_internal_1.describe('About component', function () {
         testing_internal_1.it('should work', testing_internal_1.injectAsync([testing_internal_1.TestComponentBuilder], function (tcb) {
@@ -24,7 +23,6 @@ function main() {
                 var nameListLen = function () {
                     return aboutInstance.list.names.length;
                 };
-                testing_internal_1.expect(aboutInstance.list).toEqual(jasmine.any(name_list_1.NameList));
                 testing_internal_1.expect(nameListLen()).toEqual(4);
                 testing_internal_1.expect(dom_adapter_1.DOM.querySelectorAll(aboutDOMEl, 'li').length).toEqual(nameListLen());
                 aboutInstance.addName({ value: 'Minko' });
@@ -41,7 +39,7 @@ var TestComponent = (function () {
     function TestComponent() {
     }
     TestComponent = __decorate([
-        core_1.Component({ providers: [name_list_1.NameList], selector: 'test-cmp' }),
+        core_1.Component({ selector: 'test-cmp' }),
         core_1.View({ directives: [about_1.AboutCmp] }), 
         __metadata('design:paramtypes', [])
     ], TestComponent);

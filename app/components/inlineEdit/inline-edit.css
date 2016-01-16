@@ -1,11 +1,10 @@
 .btn-inline-edit {
   padding: 0px 12px; !important;
-  padding-top: 3px;
   font-size: 0.9em;
   border: none; !important;
   background-color: transparent; !important;
   overflow: auto;
-  position: absolute;
+  position: relative;
 }
 
 .input-inline-edit {

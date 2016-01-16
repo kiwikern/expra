@@ -9,14 +9,10 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 var core_1 = require('angular2/core');
 var common_1 = require('angular2/common');
-var name_list_1 = require('../../services/name_list');
 var AboutCmp = (function () {
-    function AboutCmp(list) {
-        this.list = list;
+    function AboutCmp() {
     }
     AboutCmp.prototype.addName = function (newname) {
-        this.list.add(newname.value);
-        newname.value = '';
         return false;
     };
     AboutCmp = __decorate([
@@ -25,7 +21,7 @@ var AboutCmp = (function () {
             templateUrl: './components/about/about.html',
             directives: [common_1.CORE_DIRECTIVES]
         }), 
-        __metadata('design:paramtypes', [name_list_1.NameList])
+        __metadata('design:paramtypes', [])
     ], AboutCmp);
     return AboutCmp;
 })();

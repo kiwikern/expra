@@ -11,8 +11,8 @@ var core_1 = require('angular2/core');
 var expense_service_1 = require('../../services/expense-service');
 var expense_1 = require('../expense/expense');
 var ExpenseFormComponent = (function () {
-    function ExpenseFormComponent() {
-        this.expenseService = expense_service_1.ExpenseService.getInstance();
+    function ExpenseFormComponent(expenseService) {
+        this.expenseService = expenseService;
         this.clearExpense();
     }
     ExpenseFormComponent.prototype.onSubmit = function () {
@@ -23,6 +23,7 @@ var ExpenseFormComponent = (function () {
     ;
     ExpenseFormComponent.prototype.clearExpense = function () {
         this.expense = {
+            id: -1,
             name: '',
             category: '',
             amount: null
@@ -34,8 +35,8 @@ var ExpenseFormComponent = (function () {
             selector: 'expense-form',
             templateUrl: './components/expenseForm/expense-form.html',
             directives: [expense_1.ExpenseCmp]
-        }),
-        __metadata('design:paramtypes', [])
+        }), 
+        __metadata('design:paramtypes', [expense_service_1.ExpenseService])
     ], ExpenseFormComponent);
     return ExpenseFormComponent;
 })();

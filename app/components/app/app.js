@@ -11,14 +11,12 @@ var core_1 = require('angular2/core');
 var router_1 = require('angular2/router');
 var home_1 = require('../home/home');
 var about_1 = require('../about/about');
-var name_list_1 = require('../../services/name_list');
 var AppCmp = (function () {
     function AppCmp() {
     }
     AppCmp = __decorate([
         core_1.Component({
             selector: 'app',
-            viewProviders: [name_list_1.NameList],
             templateUrl: './components/app/app.html',
             styleUrls: ['./components/app/app.css'],
             encapsulation: core_1.ViewEncapsulation.None,
