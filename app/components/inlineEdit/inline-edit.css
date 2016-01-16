@@ -1,0 +1,22 @@
+.btn-inline-edit {
+  padding: 0px 12px; !important;
+  padding-top: 3px;
+  font-size: 0.9em;
+  border: none; !important;
+  background-color: transparent; !important;
+  overflow: auto;
+  position: absolute;
+}
+
+.input-inline-edit {
+  padding: 0px;
+  width: 75%;
+  margin: -2px 0px;
+  max-width: 150px;
+}
+
+.read-only {
+  border: none;
+  background-color: transparent;
+  -webkit-appearance: none;
+}

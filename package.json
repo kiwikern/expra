@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "description": "Seed for Angular 2 apps",
   "repository": {
-    "url": "https://github.com/mgechev/angular2-seed"
+    "url": "https://github.com/kiwikern/expra"
   },
   "scripts": {
     "build.dev": "gulp build.dev",
@@ -79,9 +79,10 @@
   },
   "dependencies": {
     "angular2": "2.0.0-beta.0",
-    "bootstrap": "^3.3.5",
+    "bootstrap": "^3.3.6",
     "es6-module-loader": "^0.17.8",
     "es6-shim": "^0.33.6",
+    "jquery": "^2.1.4",
     "reflect-metadata": "^0.1.2",
     "rxjs": "5.0.0-beta.0",
     "systemjs": "^0.19.4",

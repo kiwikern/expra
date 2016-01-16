@@ -1,10 +1,12 @@
-<h1>Howdy!</h1>
-
-<h2>
-  Gratz! <smile></smile>
-</h2>
-
-<p class="note">
-  Your deployment of Angular 2 Seed worked perfectly!
-  Click <em>about (above)</em> to get your reward!
-</p>
+<div class="text-center container" style="margin-top: 10px;">
+  <expenses-list class="text-left"></expenses-list>
+  <div class="text-right" style="margin: 15px 30px;" >
+    <button class="btn btn-default" type="button" data-toggle="modal" data-target="#newExpense">
+      <span class="glyphicon glyphicon-plus"></span> New
+    </button>
+    <button class="btn btn-default" type="button" (click)="expenseService.clearExpenses()">
+      <span class="glyphicon glyphicon-erase"></span> Clear
+    </button>
+  </div>
+  <expense-form class="text-left"></expense-form>
+</div>

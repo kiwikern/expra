@@ -48,8 +48,8 @@ _Does not rely on any global dependencies._
 │   │   └── home
 │   │       ├── home.css
 │   │       ├── home.html
-│   │       ├── home.ts
-│   │       └── home_spec.ts
+│   │       ├── expense.ts
+│   │       └── expense.ts
 │   ├── index.html
 │   └── services
 │       ├── name_list.ts
