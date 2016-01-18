@@ -1,0 +1,11 @@
+button {
+  font-size: 0.9em;
+  border: none;
+  background-color: transparent;
+  margin: -6px 0;
+}
+
+input {
+  padding: 0px;
+  margin: -2px 0;
+}

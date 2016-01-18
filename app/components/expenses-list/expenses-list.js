@@ -8,23 +8,28 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('angular2/core');
-var expenses_list_1 = require('../expenses-list/expenses-list');
-var expense_form_1 = require('../expense-form/expense-form');
 var expense_service_1 = require('../../services/expense-service');
-var HomeCmp = (function () {
-    function HomeCmp(expenseService) {
+var inline_edit_1 = require('../inline-edit/inline-edit');
+var ExpensesListComponent = (function () {
+    function ExpensesListComponent(expenseService) {
         this.expenseService = expenseService;
+        this.expenses = this.expenseService.getExpenses();
     }
-    HomeCmp = __decorate([
+    ExpensesListComponent.prototype.expensesSum = function () {
+        var sum = 0;
+        this.expenses.forEach(function (expense) { return sum += expense.amount; });
+        return sum;
+    };
+    ;
+    ExpensesListComponent = __decorate([
         core_1.Component({
-            selector: 'home',
-            templateUrl: './components/home/home.html',
-            styleUrls: ['./components/home/home.css'],
-            directives: [expenses_list_1.ExpensesListComponent, expense_form_1.ExpenseFormComponent]
+            selector: 'expenses-list',
+            templateUrl: './components/expenses-list/expenses-list.html',
+            directives: [inline_edit_1.InlineEditCmp]
         }), 
         __metadata('design:paramtypes', [expense_service_1.ExpenseService])
-    ], HomeCmp);
-    return HomeCmp;
+    ], ExpensesListComponent);
+    return ExpensesListComponent;
 })();
-exports.HomeCmp = HomeCmp;
-//# sourceMappingURL=home.js.map
+exports.ExpensesListComponent = ExpensesListComponent;
+//# sourceMappingURL=expenses-list.js.map

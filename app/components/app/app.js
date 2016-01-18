@@ -10,7 +10,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var core_1 = require('angular2/core');
 var router_1 = require('angular2/router');
 var home_1 = require('../home/home');
-var about_1 = require('../about/about');
+var categories_list_1 = require('../categories-list/categories-list');
 var AppCmp = (function () {
     function AppCmp() {
     }
@@ -24,7 +24,7 @@ var AppCmp = (function () {
         }),
         router_1.RouteConfig([
             { path: '/', component: home_1.HomeCmp, as: 'Home' },
-            { path: '/about', component: about_1.AboutCmp, as: 'About' },
+            { path: '/categories', component: categories_list_1.CategoriesList, as: 'Categories' }
         ]), 
         __metadata('design:paramtypes', [])
     ], AppCmp);

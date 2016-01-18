@@ -1,11 +1,6 @@
-//var uuid = require('uuid/uuid');
-
-
 export class ExpenseService {
-  static instance:ExpenseService;
   static LOCAL_STORAGE_KEY:string = 'expenses';
   expenses:Expense[];
-  categories:string[];
 
   constructor() {
     let expenses = JSON.parse(window.localStorage.getItem(ExpenseService.LOCAL_STORAGE_KEY));
@@ -14,7 +9,6 @@ export class ExpenseService {
     } else {
       this.expenses = expenses;
     }
-    this.categories = ['Food', 'Furniture', 'Cinema', 'Hairdresser', 'Transport', 'Furniture'];
   }
 
   getExpenses() {
@@ -28,15 +22,12 @@ export class ExpenseService {
   }
 
   clearExpenses() {
-    this.expenses = this.expenses.splice(0);
+    this.expenses.splice(0);
     this.updateLocalStorage();
   };
 
-  getCategories() {
-    return this.categories;
-  }
 
-  delete(expense:Expense) {
+  deleteExpense(expense:Expense) {
     let index = this.expenses.indexOf(expense);
     if (index > -1) {
       this.expenses.splice(index, 1);

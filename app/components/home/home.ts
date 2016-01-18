@@ -1,6 +1,6 @@
 import {Component} from 'angular2/core';
-import {ExpensesListComponent} from '../expensesList/expenses-list';
-import {ExpenseFormComponent} from '../expenseForm/expense-form';
+import {ExpensesListComponent} from '../expenses-list/expenses-list';
+import {ExpenseFormComponent} from '../expense-form/expense-form';
 import {ExpenseService} from '../../services/expense-service';
 
 @Component({

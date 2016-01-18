@@ -1,0 +1,23 @@
+<div *ngIf="!inEditMode" style="width: 100%">
+    <span *ngIf="prop === 'name'">{{expense.name}}</span>
+    <span *ngIf="prop === 'category'">{{expense.category}}</span>
+    <span *ngIf="prop === 'amount'">{{expense.amount | currency : 'EUR' : true : '1.2-2'}}</span>
+    <span [hidden]="!show">
+      <button class="btn btn-default btn-inline-edit" (click)="toggleEditMode()"><span
+        class="glyphicon glyphicon-edit"></span></button>
+    </span>
+  <!--<span class="glyphicon glyphicon-edit" (click)="toggleEditMode()" *ngIf="show"></span>-->
+</div>
+<div *ngIf="inEditMode">
+  <input class="input-inline-edit" type="text" [(ngModel)]="expense.name" *ngIf="prop === 'name'">
+  <select [(ngModel)]="expense.category" *ngIf="prop === 'category'" class="input-inline-edit">
+    <option *ngFor="#cat of categories">{{cat}}</option>
+  </select>
+  <input type="number" class="input-inline-edit input-inline-number" step="0.01" [(ngModel)]="expense.amount" *ngIf="prop === 'amount'">
+  <button type="button" class="btn btn-inline-edit btn-default" (click)="toggleEditMode()">
+    <span class="glyphicon glyphicon-save"></span>
+  </button>
+  <button type="button" class="btn btn-inline-edit btn-default" style="" (click)="deleteExpense(expense)">
+    <span class="glyphicon glyphicon-trash"></span>
+  </button>
+</div>

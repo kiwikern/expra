@@ -3,11 +3,9 @@ import {
   RouteConfig,
   ROUTER_DIRECTIVES
 } from 'angular2/router';
-// import {HTTP_PROVIDERS} from 'angular2/http';
 
 import {HomeCmp} from '../home/home';
-import {AboutCmp} from '../about/about';
-//import {ExpenseCmp} from '../expense/expense';
+import {CategoriesList} from '../categories-list/categories-list';
 
 @Component({
   selector: 'app',
@@ -18,7 +16,6 @@ import {AboutCmp} from '../about/about';
 })
 @RouteConfig([
   { path: '/', component: HomeCmp, as: 'Home' },
-  { path: '/about', component: AboutCmp, as: 'About' },
-  //{ path: '/expense', component: ExpenseCmp, as: 'Expense' }
+  {path: '/categories', component: CategoriesList, as: 'Categories' }
 ])
 export class AppCmp {}

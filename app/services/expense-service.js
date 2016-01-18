@@ -7,7 +7,6 @@ var ExpenseService = (function () {
         else {
             this.expenses = expenses;
         }
-        this.categories = ['Food', 'Furniture', 'Cinema', 'Hairdresser', 'Transport', 'Furniture'];
     }
     ExpenseService.prototype.getExpenses = function () {
         return this.expenses;
@@ -18,14 +17,11 @@ var ExpenseService = (function () {
         this.updateLocalStorage();
     };
     ExpenseService.prototype.clearExpenses = function () {
-        this.expenses = this.expenses.splice(0);
+        this.expenses.splice(0);
         this.updateLocalStorage();
     };
     ;
-    ExpenseService.prototype.getCategories = function () {
-        return this.categories;
-    };
-    ExpenseService.prototype.delete = function (expense) {
+    ExpenseService.prototype.deleteExpense = function (expense) {
         var index = this.expenses.indexOf(expense);
         if (index > -1) {
             this.expenses.splice(index, 1);

@@ -1,0 +1,17 @@
+<div *ngIf="!inEditMode">
+  {{category}}
+  <span [hidden]="!show">
+  <button class="btn btn-default" (click)="toggleEditMode()">
+    <span class="glyphicon glyphicon-edit"></span>
+  </button>
+  </span>
+</div>
+<div *ngIf="inEditMode">
+  <input type="text" [(ngModel)]="category">
+  <button class="btn btn-default" (click)="editCategory()">
+    <span class="glyphicon glyphicon-save"></span>
+  </button>
+  <button class="btn btn-default" (click)="deleteCategory()">
+    <span class="glyphicon glyphicon-trash"></span>
+  </button>
+</div>

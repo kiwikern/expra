@@ -1,0 +1,20 @@
+<div class="cat-list text-center container">
+  <h2 class="text-uppercase">Categories</h2>
+
+
+  <ul class="list-group text-left">
+    <li *ngFor="#cat of categories" class="list-group-item">
+      <categories-inline-edit [category]="cat"></categories-inline-edit>
+    </li>
+  </ul>
+
+  <div class="form-inline">
+    <div class="form-group">
+      <input type="text" [(ngModel)]="newCat" class="form-control" placeholder="New Category...">
+    </div>
+    <button type="submit" class="btn smaller-button" (click)="add(newCat)">
+      <span class="glyphicon glyphicon-plus"></span>
+    </button>
+  </div>
+</div>
+
